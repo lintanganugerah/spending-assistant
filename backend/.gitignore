@@ -1,9 +1,5 @@
 .env
 node_modules
-src/prompt/*
-!src/prompt/.gitkeep
-!src/prompt/processPromptEnc.js
-!src/prompt/prompt.example.json
 logs/*
 !logs/.gitkeep
 document/*
