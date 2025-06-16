@@ -21,6 +21,8 @@ try {
   const promptContent = fs.readFileSync(promptPath, "utf-8");
   const parsedContent = JSON.parse(promptContent);
 
+  console.log("Prompt Content: ", parsedContent);
+
   // Serialize dan enkripsi
   const stringified = JSON.stringify(parsedContent);
   const encrypted = cryptoLibrary.encrypt(stringified, key);

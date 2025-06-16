@@ -4,12 +4,12 @@ const router = express.Router();
 
 const chatRouter = express.Router();
 
-const cController = require("@controller/userQuery/chat.controller");
+const controller = require("@controller/userQuery/chat.controller");
 
-router.use(JWTmidw.verifyAccessToken);
+// router.use(JWTmidw.verifyAccessToken);
 router.use("", chatRouter);
 
-chatRouter.get("/:id", cController.getChatRoom);
-chatRouter.post("", cController.processChatPrompt);
+chatRouter.get("/:id", controller.getChatRoom);
+chatRouter.post("", controller.processChatPrompt);
 
 module.exports = router;

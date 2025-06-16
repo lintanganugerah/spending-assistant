@@ -19,7 +19,7 @@ router.get("", (_, res) => {
 
 //Private Route ini harus diakses sebelum Init. Sehingga harus ada keyID dan CSRF yang diterima dari /init
 const protectedRoute = express.Router();
-router.use("", identityMidw.identifyUser, protectedRoute);
+router.use("", protectedRoute);
 protectedRoute.use("/chat", chat);
 protectedRoute.use("/financialbackground", financialBackground);
 protectedRoute.use("/auth", auth);

@@ -6,11 +6,11 @@ const FinancialAgentSchema = joi.object({
     .lowercase()
     .valid("kebutuhan", "keinginan")
     .required(),
-  tipe_klasifikasi: joi
+  sub_klasifikasi: joi
     .string()
     .lowercase()
     .valid("primer", "sekunder", "tersier", "besar", "kecil"),
-  reason: joi.string().required(),
+  alasan: joi.string().required(),
   keterjangkauan: joi.string().lowercase().required(),
   nilai_jangka_panjang: joi.string().lowercase().required(),
 });
@@ -21,7 +21,7 @@ const EmotionAgentSchema = joi.object({
     .lowercase()
     .valid("impulsif", "tidak impulsif", "non-impulsif", "non impulsif")
     .required(),
-  reason: joi.string().required(),
+  alasan: joi.string().required(),
 });
 
 module.exports = { FinancialAgentSchema, EmotionAgentSchema };

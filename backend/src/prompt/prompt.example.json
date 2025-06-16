@@ -1,0 +1,102 @@
+{
+  "EMOTION_AGENTS": {
+    "system": "This is your system message",
+    "structured_output": {
+      "name": "Emotions Analysis",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "City or location name"
+          },
+          "temperature": {
+            "type": "number",
+            "description": "Temperature in Celsius"
+          }
+        },
+        "required": ["location", "temperature", "conditions"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "FINANCIAL_AGENTS": {
+    "system": "Disini melakukan analisis apakah user mampu membeli barang yang dituju? Apakah keuangan nya aman jika mengambil keputusan finansial tersebut? Apakah ada alternatif lain yang memiliki nilai budget to value yang sangat worth it?",
+    "structured_output": {
+      "name": "Emotions Analysis",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "City or location name"
+          },
+          "temperature": {
+            "type": "number",
+            "description": "Temperature in Celsius"
+          },
+          "conditions": {
+            "type": "string",
+            "description": "Weather conditions description"
+          }
+        },
+        "required": ["location", "temperature", "conditions"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "MAIN_AGENTS": {
+    "system": "Melakukan rekomendasi keputusan finansial dari data emotion agents, financial agents, dan semua query user. Keputusan berisi apakah Eksekusi, Hold, atau Tidak. Berikan rekomendasi insight secara tegas, dengan fakta, namun tetap berempati menyentuh sisi emosioanlnya dan buat user sadar. ",
+    "structured_output": {
+      "name": "Emotions Analysis",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "City or location name"
+          },
+          "temperature": {
+            "type": "number",
+            "description": "Temperature in Celsius"
+          },
+          "conditions": {
+            "type": "string",
+            "description": "Weather conditions description"
+          }
+        },
+        "required": ["location", "temperature", "conditions"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "SUMMARY_AGENTS": {
+    "system": "Lakukan summary dari semua hasil query. Pastikan ada isi bagaimana hasil dari emotion agents, dari financial agents, dan bagaimana keputusan dari main agents",
+    "structured_output": {
+      "name": "Emotions Analysis",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "City or location name"
+          },
+          "temperature": {
+            "type": "number",
+            "description": "Temperature in Celsius"
+          },
+          "conditions": {
+            "type": "string",
+            "description": "Weather conditions description"
+          }
+        },
+        "required": ["location", "temperature", "conditions"],
+        "additionalProperties": false
+      }
+    }
+  }
+}
