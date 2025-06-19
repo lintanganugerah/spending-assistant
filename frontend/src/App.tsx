@@ -1,16 +1,13 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import PageNotFound from "./pages/PageNotFound";
+import { RouterProvider } from "react-router-dom";
+import CreateRoute from "./routes/CreateRoute";
+
+function AppRouter() {
+  const router = CreateRoute();
+  return <RouterProvider router={router} />;
+}
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" Component={Home} />
-        <Route path="*" Component={PageNotFound} />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <AppRouter />;
 }
 
 export default App;

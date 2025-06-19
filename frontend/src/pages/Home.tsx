@@ -46,7 +46,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-black text-white px-4">
+    <>
       {/* Header */}
       <MainPageTitle
         Title="Beli Gak Ya?"
@@ -74,6 +74,6 @@ export default function Home() {
           onChange={HandleChangeFinancialInfo}
         />
       </div>
-    </div>
+    </>
   );
 }
