@@ -1,16 +1,22 @@
 import { FaPaperPlane } from "react-icons/fa6";
 
-type ReasonTextAreaProps = {
+type ChatBoxProps = {
   MaxWords?: number;
   TextInformationBottom?: string;
   PlaceHolderText?: string;
+  value: string;
+  onChange: (value: string) => void;
+  onSubmit: () => void;
 };
 
-export function ReasonTextArea({
+export function ChatBox({
   MaxWords = 500,
   TextInformationBottom,
   PlaceHolderText = "Kenapa anda ingin beli barang/produk tersebut?",
-}: ReasonTextAreaProps) {
+  value,
+  onChange,
+  onSubmit,
+}: ChatBoxProps) {
   return (
     <div className="p-4 rounded-xl border border-zinc-700 bg-zinc-950">
       <textarea
@@ -20,15 +26,21 @@ export function ReasonTextArea({
         placeholder={PlaceHolderText}
         rows={4}
         maxLength={MaxWords}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
       ></textarea>
 
       <div className="flex flex-row sm:flex-row justify-between items-center mt-4 gap-4">
-        <div className="text-zinc-500 text-base">0/{MaxWords}</div>
+        <div className="text-zinc-500 text-base">
+          {value.length}/{MaxWords}
+        </div>
         <div className="text-zinc-500 text-sm font-light text-center">
           {TextInformationBottom}
         </div>
         <div className="text-zinc-500 text-base border border-zinc-700 p-4 rounded-lg">
-          <FaPaperPlane />
+          <button onClick={onSubmit}>
+            <FaPaperPlane />
+          </button>
         </div>
       </div>
     </div>

@@ -1,6 +1,21 @@
 import { FaCircleChevronDown } from "react-icons/fa6";
 
-export function InformasiFinansialSection() {
+type InformasiFinansialFormProps = {
+  data: {
+    currentJob: string;
+    TotalIncomeMonthly: number;
+    TotalExpenseMonthly: number;
+    MainIncomeSource: string;
+    isSaving: string;
+    isLoan: string;
+  };
+  onChange: (field: string, value: string | number | boolean) => void;
+};
+
+export function InformasiFinansialForm({
+  data,
+  onChange,
+}: InformasiFinansialFormProps) {
   return (
     <div className="p-4 rounded-xl border border-zinc-700 bg-zinc-950">
       <div className="flex flex-col items-center mb-4">
@@ -19,8 +34,10 @@ export function InformasiFinansialSection() {
           <select
             className="flex-1 px-4 py-3 rounded-lg bg-zinc-950 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
             name="currentJob"
+            value={data.currentJob}
+            onChange={(e) => onChange("currentJob", e.target.value)}
           >
-            <option>Pekerjaan sekarang</option>
+            <option disabled>Pilih Pekerjaan sekarang</option>
             <option>Belum Bekerja</option>
             <option>Ibu/Bapak rumah tangga</option>
             <option>Karyawan</option>
@@ -33,6 +50,8 @@ export function InformasiFinansialSection() {
             className="flex-1 px-4 py-3 rounded-lg bg-zinc-950 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             name="TotalIncomeMonthly"
             min={100}
+            value={data.TotalIncomeMonthly <= 0 ? "" : data.TotalIncomeMonthly}
+            onChange={(e) => onChange("TotalIncomeMonthly", e.target.value)}
           />
 
           <input
@@ -41,16 +60,24 @@ export function InformasiFinansialSection() {
             className="flex-1 px-4 py-3 rounded-lg bg-zinc-950 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             name="TotalExpenseMonthly"
             min={100}
+            value={
+              data.TotalExpenseMonthly <= 0 ? "" : data.TotalExpenseMonthly
+            }
+            onChange={(e) => onChange("TotalExpenseMonthly", e.target.value)}
           />
 
           <select
             className="flex-1 px-4 py-3 rounded-lg bg-zinc-950 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
             name="MainIncomeSource"
+            value={data.MainIncomeSource}
+            onChange={(e) => onChange("MainIncomeSource", e.target.value)}
           >
-            <option>Pilih sumber pendapatan</option>
-            <option value={"Orang tua"}>Orang tua</option>
-            <option value={"Pasangan"}>Pasangan</option>
-            <option value={"Gaji Utama"}>Gaji Utama</option>
+            <option value={""} disabled>
+              Pilih sumber pendapatan
+            </option>
+            <option>Orang tua</option>
+            <option>Pasangan</option>
+            <option>Gaji Utama</option>
           </select>
         </div>
 
@@ -59,8 +86,12 @@ export function InformasiFinansialSection() {
           <select
             className="flex-1 px-4 py-3 rounded-lg bg-zinc-950 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
             name="isSaving"
+            value={data.isSaving.toString()}
+            onChange={(e) => onChange("isSaving", e.target.value)}
           >
-            <option>Ada tabungan yang bisa digunakan?</option>
+            <option value={""} disabled>
+              Ada tabungan yang bisa digunakan?
+            </option>
             <option value={"true"}>Ya</option>
             <option value={"false"}>Tidak</option>
           </select>
@@ -68,8 +99,12 @@ export function InformasiFinansialSection() {
           <select
             className="flex-1 px-4 py-3 rounded-lg bg-zinc-950 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
             name="isLoan"
+            value={data.isLoan.toString()}
+            onChange={(e) => onChange("isLoan", e.target.value)}
           >
-            <option>Apakah ada hutang/paylater?</option>
+            <option value={""} disabled>
+              Apakah ada hutang/paylater?
+            </option>
             <option value={"true"}>Ya</option>
             <option value={"false"}>Tidak</option>
           </select>
