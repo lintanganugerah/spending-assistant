@@ -17,13 +17,33 @@ const CreateRoute = () => {
           },
         },
         {
-          path: "*",
+          path: "chat",
+          index: true,
           lazy: async () => {
-            const PageNotFound = await import("../pages/PageNotFound");
-            return { Component: PageNotFound.default };
+            const SearchChatRoom = await import("../pages/SearchChatRoom");
+            return { Component: SearchChatRoom.default };
           },
         },
       ],
+    },
+    {
+      path: "chat",
+      children: [
+        {
+          path: ":id",
+          lazy: async () => {
+            const ChatRoom = await import("../pages/ChatRoom");
+            return { Component: ChatRoom.default };
+          },
+        },
+      ],
+    },
+    {
+      path: "*",
+      lazy: async () => {
+        const PageNotFound = await import("../pages/PageNotFound");
+        return { Component: PageNotFound.default };
+      },
     },
   ]);
 };
