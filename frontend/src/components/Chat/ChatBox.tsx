@@ -1,18 +1,11 @@
 import { FaPaperPlane } from "react-icons/fa6";
-
-type ChatBoxProps = {
-  MaxWords?: number;
-  TextInformationBottom?: string;
-  PlaceHolderText?: string;
-  value: string;
-  onChange: (value: string) => void;
-  onSubmit: () => void;
-};
+import { ChatBoxProps } from "../../types/ChatTypes";
 
 export function ChatBox({
   MaxWords = 500,
   TextInformationBottom,
   PlaceHolderText = "Kenapa anda ingin beli barang/produk tersebut?",
+  MaxRows = 4,
   value,
   onChange,
   onSubmit,
@@ -24,7 +17,7 @@ export function ChatBox({
         name="purchaseReason"
         id="textareaReason"
         placeholder={PlaceHolderText}
-        rows={4}
+        rows={MaxRows}
         maxLength={MaxWords}
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -37,7 +30,7 @@ export function ChatBox({
         <div className="text-zinc-500 text-sm font-light text-center">
           {TextInformationBottom}
         </div>
-        <div className="text-zinc-500 text-base border border-zinc-700 p-4 rounded-lg">
+        <div className="text-zinc-500 text-base border border-zinc-700 p-2 sm:p-4 rounded-lg">
           <button onClick={onSubmit}>
             <FaPaperPlane />
           </button>

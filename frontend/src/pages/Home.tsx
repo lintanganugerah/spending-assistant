@@ -1,7 +1,7 @@
 import { MainPageTitle } from "./../components/MainPageTitle";
 import { InformasiFinansialForm } from "../components/InformasiFinansialForm";
 import { PurchaseFormFields } from "../components/PurchaseFormFields";
-import { ChatBox } from "../components/ChatBox";
+import { ChatBox } from "../components/Chat/ChatBox";
 import { useState } from "react";
 
 export default function Home() {
