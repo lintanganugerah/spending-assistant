@@ -11,7 +11,7 @@ export function ChatBox({
   onSubmit,
 }: ChatBoxProps) {
   return (
-    <div className="p-4 rounded-xl border border-zinc-700 bg-zinc-950">
+    <div className="p-4 rounded-xl border border-zinc-500 form-color">
       <textarea
         className="w-full resize-none px-4 py-3 text-white focus:outline-none"
         name="purchaseReason"
@@ -30,8 +30,8 @@ export function ChatBox({
         <div className="text-zinc-500 text-sm font-light text-center">
           {TextInformationBottom}
         </div>
-        <div className="text-zinc-500 text-base border border-zinc-700 p-2 sm:p-4 rounded-lg">
-          <button onClick={onSubmit}>
+        <div className="flex text-zinc-500 border border-zinc-500 p-4 items-center rounded-lg">
+          <button type="submit" onClick={onSubmit}>
             <FaPaperPlane />
           </button>
         </div>

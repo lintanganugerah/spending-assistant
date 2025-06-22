@@ -25,7 +25,7 @@ export function InformasiFinansialForm({
   return (
     <div
       className={`p-4 rounded-x ${
-        isBoxFormVisibile ? "border border-zinc-700 bg-zinc-950" : ""
+        isBoxFormVisibile ? "border border-zinc-500 form-color rounded-2xl" : ""
       }`}
     >
       <div className="flex flex-col items-center">
@@ -52,7 +52,7 @@ export function InformasiFinansialForm({
             {/* Financial Input 1 */}
             <div className="flex flex-col md:flex-row gap-4">
               <select
-                className="flex-1 px-4 py-3 rounded-lg bg-zinc-950 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
+                className="flex-1 px-4 py-3 rounded-lg form-color text-white border border-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
                 name="currentJob"
                 value={data.currentJob}
                 onChange={(e) => onChange("currentJob", e.target.value)}
@@ -67,7 +67,7 @@ export function InformasiFinansialForm({
               <input
                 type="number"
                 placeholder="Total pendapatan perbulan?"
-                className="flex-1 px-4 py-3 rounded-lg bg-zinc-950 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-1 px-4 py-3 rounded-lg form-color text-white border border-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 name="TotalIncomeMonthly"
                 min={100}
                 value={
@@ -79,7 +79,7 @@ export function InformasiFinansialForm({
               <input
                 type="number"
                 placeholder="Total pengeluaran perbulan?"
-                className="flex-1 px-4 py-3 rounded-lg bg-zinc-950 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-1 px-4 py-3 rounded-lg form-color text-white border border-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 name="TotalExpenseMonthly"
                 min={100}
                 value={
@@ -91,7 +91,7 @@ export function InformasiFinansialForm({
               />
 
               <select
-                className="flex-1 px-4 py-3 rounded-lg bg-zinc-950 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
+                className="flex-1 px-4 py-3 rounded-lg form-color text-white border border-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
                 name="MainIncomeSource"
                 value={data.MainIncomeSource}
                 onChange={(e) => onChange("MainIncomeSource", e.target.value)}
@@ -108,7 +108,7 @@ export function InformasiFinansialForm({
             {/* Financial Input 2 */}
             <div className="flex flex-col md:flex-row gap-4 mt-4">
               <select
-                className="flex-1 px-4 py-3 rounded-lg bg-zinc-950 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
+                className="flex-1 px-4 py-3 rounded-lg form-color text-white border border-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
                 name="isSaving"
                 value={data.isSaving.toString()}
                 onChange={(e) => onChange("isSaving", e.target.value)}
@@ -121,7 +121,7 @@ export function InformasiFinansialForm({
               </select>
 
               <select
-                className="flex-1 px-4 py-3 rounded-lg bg-zinc-950 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
+                className="flex-1 px-4 py-3 rounded-lg form-color text-white border border-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
                 name="isLoan"
                 value={data.isLoan.toString()}
                 onChange={(e) => onChange("isLoan", e.target.value)}

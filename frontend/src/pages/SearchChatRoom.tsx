@@ -15,7 +15,7 @@ export default function SearchChatRoom() {
       />
 
       <form onSubmit={handleOnSubmit}>
-        <div className="flex flex-row justify-between border border-zinc-700 p-4 rounded-2xl gap-4 max-w-6xl">
+        <div className="flex flex-row justify-between border border-zinc-500 p-4 rounded-2xl gap-4 max-w-6xl">
           <input
             name="kodechat"
             placeholder="Masukan kode ruang chat"

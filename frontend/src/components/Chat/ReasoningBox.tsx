@@ -12,7 +12,7 @@ export function ReasoningBox({ header, timeElapsed, body }: ReasoningBoxProps) {
     <div className="flex justify-start">
       <div className="w-full">
         <div
-          className="bg-zinc-950 font-bold p-4 flex items-center justify-between"
+          className="form-color font-bold p-4 flex items-center text-white justify-between"
           id="header"
         >
           <div className="flex flex-row items-center gap-4">
