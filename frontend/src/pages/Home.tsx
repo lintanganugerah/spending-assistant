@@ -1,5 +1,5 @@
 import { MainPageTitle } from "./../components/MainPageTitle";
-import { InformasiFinansialForm } from "../components/InformasiFinansialForm";
+import { FinancialInfo } from "../components/FinancialInfo";
 import { PurchaseFormFields } from "../components/PurchaseFormFields";
 import { ChatBox } from "../components/Chat/ChatBox";
 import { useState } from "react";
@@ -69,7 +69,7 @@ export default function Home() {
           onSubmit={HandleSubmit}
           TextInformationBottom="Data akan terhapus dalam 15 menit"
         />
-        <InformasiFinansialForm
+        <FinancialInfo
           data={financialInfo}
           onChange={HandleChangeFinancialInfo}
         />

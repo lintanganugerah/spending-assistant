@@ -1,22 +1,8 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
+import { FinancialInfoProps } from "../types/ComponentProps/FinancialInfoProps";
 
-type InformasiFinansialFormProps = {
-  data: {
-    currentJob: string;
-    TotalIncomeMonthly: number;
-    TotalExpenseMonthly: number;
-    MainIncomeSource: string;
-    isSaving: string;
-    isLoan: string;
-  };
-  onChange: (field: string, value: string | number | boolean) => void;
-};
-
-export function InformasiFinansialForm({
-  data,
-  onChange,
-}: InformasiFinansialFormProps) {
+export function FinancialInfo({ data, onChange }: FinancialInfoProps) {
   const [isBoxFormVisibile, setIsBoxFormVisible] = useState(false);
 
   const handleBoxFormVisible = () => {

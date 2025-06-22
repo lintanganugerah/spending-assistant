@@ -1,11 +1,4 @@
-type PurchaseFormFieldsProps = {
-  valueForm: {
-    product: string;
-    fundSource: string;
-    price: number;
-  };
-  onChange: (field: string, value: string | number) => void;
-};
+import { PurchaseFormFieldsProps } from "../types/ComponentProps/PurchaseFormFIeldProps";
 
 export function PurchaseFormFields({
   valueForm,

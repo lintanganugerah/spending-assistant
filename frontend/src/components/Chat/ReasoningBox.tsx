@@ -1,5 +1,5 @@
 import { FaChevronDown } from "react-icons/fa";
-import { ReasoningBoxProps } from "../../types/ChatTypes";
+import { ReasoningBoxProps } from "../../types/ComponentProps/ChatComponentProps";
 import { useState } from "react";
 
 export function ReasoningBox({ header, timeElapsed, body }: ReasoningBoxProps) {
