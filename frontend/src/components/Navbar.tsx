@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -11,7 +11,12 @@ export default function Navbar() {
         >
           Home
         </NavLink>
-        <Link to={"/chat"}>Ruang Chat</Link>
+        <NavLink
+          to={"/chat"}
+          className={({ isActive }) => (isActive ? "active font-black" : "")}
+        >
+          Ruang Chat
+        </NavLink>
       </div>
       <div className="text-sm font-light">Github</div>
     </div>

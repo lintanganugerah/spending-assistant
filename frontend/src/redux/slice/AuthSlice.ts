@@ -1,9 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { csrfTokenState, loginStatus, tokenState } from "../../types/AuthTypes";
+import { loginStatus, tokenState } from "../../types/AuthTypes";
 
 const initialState = {
   token: "",
-  csrfToken: "",
   isLoggedIn: false,
 };
 
@@ -16,12 +15,6 @@ const AuthSlice = createSlice({
     },
     removeCurrentToken(state: tokenState) {
       state.token = "";
-    },
-    saveCsrfToken(state: csrfTokenState, action: PayloadAction<string>) {
-      state.csrfToken = action.payload;
-    },
-    removeCsrfToken(state: csrfTokenState) {
-      state.csrfToken = "";
     },
     setLoggedInStatus(state: loginStatus) {
       state.isLoggedIn = true;

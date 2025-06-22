@@ -13,6 +13,7 @@ const rootReducer = combineReducers({
 const configPersist = {
   key: "root",
   storage,
+  whitelist: ["user", "auth"],
 };
 
 const persistedReducer = persistReducer(configPersist, rootReducer);
@@ -23,5 +24,6 @@ const store = configureStore({
 
 export const persistor = persistStore(store);
 export type RootType = ReturnType<typeof store.getState>;
+export type StoreDispatchType = typeof store.dispatch;
 
 export default store;
