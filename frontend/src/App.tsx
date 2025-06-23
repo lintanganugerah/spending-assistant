@@ -1,5 +1,6 @@
 import { RouterProvider } from "react-router-dom";
 import CreateRoute from "./routes/CreateRoute";
+import { useInitializeToken } from "./hooks/useInitializeToken";
 
 function AppRouter() {
   const router = CreateRoute();
@@ -7,6 +8,7 @@ function AppRouter() {
 }
 
 function App() {
+  useInitializeToken();
   return <AppRouter />;
 }
 

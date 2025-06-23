@@ -5,7 +5,7 @@ const crypto = require("crypto");
 const fs = require("fs");
 const customCrypto = require("../library/crypto/crypto.library");
 
-dotenv.config({ path: path.join(__dirname, "../.env") });
+dotenv.config();
 const encPath = path.join(__dirname, "promptEnc.config.json");
 
 const ENV_SCHEMA = Joi.object({

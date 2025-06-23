@@ -1,26 +1,19 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { loginStatus, tokenState } from "../../types/AuthTypes";
+import { TokenState } from "../../types/AuthTypes";
 
 const initialState = {
   token: "",
-  isLoggedIn: false,
 };
 
 const AuthSlice = createSlice({
-  name: "user",
+  name: "auth",
   initialState,
   reducers: {
-    saveCurrentToken(state: tokenState, action: PayloadAction<string>) {
+    saveCurrentToken(state: TokenState, action: PayloadAction<string>) {
       state.token = action.payload;
     },
-    removeCurrentToken(state: tokenState) {
+    removeCurrentToken(state: TokenState) {
       state.token = "";
-    },
-    setLoggedInStatus(state: loginStatus) {
-      state.isLoggedIn = true;
-    },
-    removeLoggedInStatus(state: loginStatus) {
-      state.isLoggedIn = false;
     },
   },
 });

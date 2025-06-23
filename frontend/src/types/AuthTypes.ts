@@ -1,11 +1,7 @@
-export type tokenState = {
+import { BaseApiResponseTypes } from "./BaseApiResponseTypes";
+
+export type TokenState = {
   token: string;
 };
 
-export type csrfTokenState = {
-  csrfToken: string;
-};
-
-export type loginStatus = {
-  isLoggedIn: boolean;
-};
+export type AuthInitResponse = TokenState & BaseApiResponseTypes;
