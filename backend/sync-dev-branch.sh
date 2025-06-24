@@ -68,10 +68,10 @@ git checkout dev/backend
 git merge dev --no-edit
 
 # Hapus frontend jika ada
-if [ -d "frontend" ]; then
-  rm -rf frontend
-  git rm -r frontend || true
-  git commit -m "remove frontend from dev/backend"
+if [ -d "../frontend" ]; then
+  rm -rf ../frontend
+  git rm -r ../frontend || true
+  git commit --allow-empty -m "[AUTO] sync with dev branch (Only left backend here)"
 fi
 
 # Commit kosong sebagai penanda sync
