@@ -1,16 +1,15 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import PageNotFound from "./pages/PageNotFound";
+import { RouterProvider } from "react-router-dom";
+import CreateRoute from "./routes/CreateRoute";
+import { useInitializeToken } from "./hooks/useInitializeToken";
+
+function AppRouter() {
+  const router = CreateRoute();
+  return <RouterProvider router={router} />;
+}
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" Component={Home} />
-        <Route path="*" Component={PageNotFound} />
-      </Routes>
-    </BrowserRouter>
-  );
+  useInitializeToken();
+  return <AppRouter />;
 }
 
 export default App;
