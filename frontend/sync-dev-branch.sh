@@ -13,7 +13,7 @@
 # - Atau setelah ada update terbaru di branch `dev`
 # - Untuk memastikan `dev/frontend` selalu up-to-date tanpa membawa folder backend
 #
-# 🛠️ APA YANG DILAKUKAN SCRIPT:
+# APA YANG DILAKUKAN SCRIPT:
 # 1. Mengecek apakah kamu punya perubahan lokal yang belum di-commit. Jika ada, script berhenti.
 # 2. Pindah ke branch `dev`, lalu menarik update terbaru dari remote.
 # 3. Kembali ke `dev/frontend`, lalu menggabungkan (`merge`) perubahan terbaru dari `dev`.
@@ -68,10 +68,10 @@ git checkout dev/frontend
 git merge dev --no-edit
 
 # Hapus backend jika ada
-if [ -d "backend" ]; then
-  rm -rf backend
-  git rm -r backend || true
-  git commit -m "remove backend from dev/frontend"
+if [ -d "../backend" ]; then
+  rm -rf ../backend
+  git rm -r ../backend || true
+  git commit -m "[AUTO] sync with dev branch (Only left frontend here)"
 fi
 
 # Commit kosong sebagai penanda sync
