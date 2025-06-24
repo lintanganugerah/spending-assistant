@@ -37,6 +37,10 @@ YELLOW='\033[0;33m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color / reset
 
+# Deteksi root direktori Git dari posisi script
+REPO_ROOT=$(git rev-parse --show-toplevel)
+cd "$REPO_ROOT"
+
 # Tampilkan branch saat ini
 CURRENT_BRANCH=$(git branch --show-current)
 echo -e "${GREEN}Saat ini di branch: ${NC}$CURRENT_BRANCH"
