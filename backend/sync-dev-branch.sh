@@ -66,7 +66,7 @@ git checkout dev
 git pull origin dev
 
 # Kembali ke backend branch
-git checkout dev/backend
+git checkout dev-backend
 
 # Merge dari dev
 git merge dev --no-edit
