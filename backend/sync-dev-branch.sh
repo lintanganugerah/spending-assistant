@@ -37,6 +37,10 @@ YELLOW='\033[0;33m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color / reset
 
+# Deteksi root direktori Git dari posisi script
+REPO_ROOT=$(git rev-parse --show-toplevel)
+cd "$REPO_ROOT"
+
 # Tampilkan branch saat ini
 CURRENT_BRANCH=$(git branch --show-current)
 echo -e "${GREEN}Saat ini di branch: ${NC}$CURRENT_BRANCH"
@@ -62,16 +66,16 @@ git checkout dev
 git pull origin dev
 
 # Kembali ke backend branch
-git checkout dev/backend
+git checkout dev-backend
 
 # Merge dari dev
 git merge dev --no-edit
 
 # Hapus frontend jika ada
-if [ -d "../frontend" ]; then
-  rm -rf ../frontend
-  git rm -r ../frontend || true
-  git commit --allow-empty -m "[AUTO] sync with dev branch (Only left backend here)"
+if [ -d "frontend" ]; then
+  rm -rf frontend
+  git rm -r frontend || true
+  git commit -m "remove frontend from dev/backend"
 fi
 
 # Commit kosong sebagai penanda sync
