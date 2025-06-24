@@ -1,26 +1,37 @@
 import { useEffect } from "react";
-import { useGetInitializeTokenQuery } from "redux/apiQuery/authAPI";
-import isTokenExpired from "helpers/isTokenExpired";
+import {
+  useLazyGetInitializeTokenQuery,
+  useLazyPostCheckExpiredQuery,
+} from "redux/apiQuery/authAPI";
 import { useToken } from "./useToken";
-import { useDispatch } from "react-redux";
-import { saveCurrentToken } from "redux/slice/AuthSlice";
 
 export function useInitializeToken() {
   const token = useToken();
-  const dispatch = useDispatch();
-  const expired = isTokenExpired(token);
-
-  const { data, isSuccess, isError } = useGetInitializeTokenQuery(undefined, {
-    skip: !(!token || expired), // fetch hanya jika token kosong/expired
-  });
+  const [checkExpired, { isLoading: isChecking }] =
+    useLazyPostCheckExpiredQuery();
+  const [fetchInitToken, { isLoading: isFetching }] =
+    useLazyGetInitializeTokenQuery();
 
   useEffect(() => {
-    if (isSuccess && data?.token) {
-      dispatch(saveCurrentToken(data.token));
+    async function validate() {
+      // Jika salah satu sedang loading skip dulu, tunggu perubahan load selesai
+      if (isChecking || isFetching) return;
+
+      // Token kosong, fetch baru
+      if (!token) {
+        await fetchInitToken();
+        return;
+      }
+
+      const result = await checkExpired({ token }).unwrap();
+
+      // Token expired, fetch baru
+      if (result.expired) {
+        await fetchInitToken();
+      }
     }
 
-    if (isError) {
-      console.warn("Gagal fetch initialize token.");
-    }
-  }, [isSuccess, isError, data, dispatch]);
+    validate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token, isChecking, isFetching]);
 }
