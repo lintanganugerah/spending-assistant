@@ -7,5 +7,6 @@ export type FinancialInfoProps = {
     isSaving: string;
     isLoan: string;
   };
+  Error?: Record<string, string> | undefined;
   onChange: (field: string, value: string | number | boolean) => void;
 };

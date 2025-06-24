@@ -1,10 +1,13 @@
+import { ChatBoxType } from "types/ChatTypes";
+
 export type ChatBoxProps = {
   MaxWords?: number;
   TextInformationBottom?: string;
   PlaceHolderText?: string;
-  value: string;
+  value: { purchaseReason: string };
+  Error?: Record<string, string> | undefined;
   MaxRows?: number;
-  onChange: (value: string) => void;
+  onChange: ({ purchaseReason }: ChatBoxType) => void;
   onSubmit: () => void;
 };
 

@@ -11,7 +11,7 @@ function initializeToken(_, res) {
     },
     config.jwt.secret,
     {
-      expiresIn: 5,
+      expiresIn: "24h",
     }
   );
 
