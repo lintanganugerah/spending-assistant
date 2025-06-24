@@ -1,4 +1,4 @@
-import { MainPageTitleProps } from "../types/ComponentProps/MainPageTitleProps";
+import { MainPageTitleProps } from "types/ComponentProps/MainPageTitleProps";
 
 export function MainPageTitle({ Title, Subtitle }: MainPageTitleProps) {
   return (

@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { RootStateType } from "../redux/store";
+import { RootStateType } from "redux/store";
 
 export const selectToken = (state: RootStateType) => state.auth.token;
 

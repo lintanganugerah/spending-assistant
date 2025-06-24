@@ -1,5 +1,5 @@
 import { FaPaperPlane } from "react-icons/fa6";
-import { ChatBoxProps } from "../../types/ComponentProps/ChatComponentProps";
+import { ChatBoxProps } from "types/ComponentProps/ChatComponentProps";
 
 export function ChatBox({
   MaxWords = 500,

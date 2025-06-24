@@ -1,9 +1,9 @@
-import { BubbleChatAI } from "./../components/Chat/BubbleChatAI";
-import { ReasoningBox } from "./../components/Chat/ReasoningBox";
-import { BubbleChatUser } from "./../components/Chat/BubbleChatUser";
+import { BubbleChatAI } from "components/Chat/BubbleChatAI";
+import { ReasoningBox } from "components/Chat/ReasoningBox";
+import { BubbleChatUser } from "components/Chat/BubbleChatUser";
 import { useState } from "react";
-import { ChatBox } from "../components/Chat/ChatBox";
-import Navbar from "../components/Navbar";
+import { ChatBox } from "components/Chat/ChatBox";
+import Navbar from "components/Navbar";
 
 export default function ChatRoom() {
   const [queryChat, setQueryChat] = useState("");

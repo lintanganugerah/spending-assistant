@@ -1,5 +1,5 @@
 import React from "react";
-import { MainPageTitle } from "../components/MainPageTitle";
+import { MainPageTitle } from "components/MainPageTitle";
 import { FaPaperPlane } from "react-icons/fa6";
 
 export default function SearchChatRoom() {

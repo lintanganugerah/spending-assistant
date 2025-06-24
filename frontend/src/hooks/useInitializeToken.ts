@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { useGetInitializeTokenQuery } from "../redux/apiQuery/authAPI";
-import isTokenExpired from "../helpers/isTokenExpired";
+import { useGetInitializeTokenQuery } from "redux/apiQuery/authAPI";
+import isTokenExpired from "helpers/isTokenExpired";
 import { useToken } from "./useToken";
 import { useDispatch } from "react-redux";
-import { saveCurrentToken } from "../redux/slice/AuthSlice";
+import { saveCurrentToken } from "redux/slice/AuthSlice";
 
 export function useInitializeToken() {
   const token = useToken();

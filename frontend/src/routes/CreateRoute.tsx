@@ -5,14 +5,14 @@ const CreateRoute = () => {
     {
       path: "/",
       lazy: async () => {
-        const MainLayout = await import("../layouts/MainLayout");
+        const MainLayout = await import("layouts/MainLayout");
         return { Component: MainLayout.default };
       },
       children: [
         {
           index: true,
           lazy: async () => {
-            const Home = await import("../pages/Home");
+            const Home = await import("pages/Home");
             return { Component: Home.default };
           },
         },
@@ -20,7 +20,7 @@ const CreateRoute = () => {
           path: "chat",
           index: true,
           lazy: async () => {
-            const SearchChatRoom = await import("../pages/SearchChatRoom");
+            const SearchChatRoom = await import("pages/SearchChatRoom");
             return { Component: SearchChatRoom.default };
           },
         },
@@ -32,7 +32,7 @@ const CreateRoute = () => {
         {
           path: ":id",
           lazy: async () => {
-            const ChatRoom = await import("../pages/ChatRoom");
+            const ChatRoom = await import("pages/ChatRoom");
             return { Component: ChatRoom.default };
           },
         },
@@ -41,7 +41,7 @@ const CreateRoute = () => {
     {
       path: "*",
       lazy: async () => {
-        const PageNotFound = await import("../pages/PageNotFound");
+        const PageNotFound = await import("pages/PageNotFound");
         return { Component: PageNotFound.default };
       },
     },

@@ -1,4 +1,4 @@
-import { BubbleChatProps } from "../../types/ComponentProps/ChatComponentProps";
+import { BubbleChatProps } from "types/ComponentProps/ChatComponentProps";
 export function BubbleChatUser({ text }: BubbleChatProps) {
   return (
     <div className="flex justify-end">

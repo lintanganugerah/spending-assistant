@@ -1,4 +1,4 @@
-import { PurchaseFormFieldsProps } from "../types/ComponentProps/PurchaseFormFIeldProps";
+import { PurchaseFormFieldsProps } from "types/ComponentProps/PurchaseFormFIeldProps";
 
 export function PurchaseFormFields({
   valueForm,

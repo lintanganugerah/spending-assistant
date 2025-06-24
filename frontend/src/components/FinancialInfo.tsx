@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
-import { FinancialInfoProps } from "../types/ComponentProps/FinancialInfoProps";
+import { FinancialInfoProps } from "types/ComponentProps/FinancialInfoProps";
 
 export function FinancialInfo({ data, onChange }: FinancialInfoProps) {
   const [isBoxFormVisibile, setIsBoxFormVisible] = useState(false);
